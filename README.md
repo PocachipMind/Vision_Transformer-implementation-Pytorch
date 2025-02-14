@@ -61,3 +61,30 @@ attention 개념 자체가 전체를 보고 어디가 어떤지를 말하는 모
 - 배치 사이즈 : 4096
 - Label smoothing 사용
 - validation accuracy 기준 early-stopping
+
+## Fine-Tuning 조건
+- Optimizer : SGD 모멘텀
+- 스케줄링 : cosine learning rate decay
+- weight decay: 미적용
+- grad clipping 적용
+- 배치 사이즈 : 512
+- Resize 적용
+  ( ImageNet : 512 for ViT-L/16 and 518 for ViT-H/14, 나머지는 384)
+
+# ViT 구현
+
+## 하이퍼 파라미터
+- Dataset : CIFAR10 ( 32 x 32 )
+- Patch size : 4
+- embedding dimension D : 128
+- #heads : 8
+- #layers: 12
+- #MLP hidden dimension : 64
+- ResNet18과 비교
+
+## 학습 조건
+- Optimizer : ADAM
+- weight decay: 2e-4
+- 배치 사이즈 : 128
+- Dropout rate : 0.2
+- validation accuracy 기준 early-stopping

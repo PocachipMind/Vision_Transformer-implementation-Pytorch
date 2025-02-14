@@ -53,3 +53,11 @@ attention 개념 자체가 전체를 보고 어디가 어떤지를 말하는 모
 - 아래 데이터셋에 대해 전이학습 진행 
 
   ( ImageNet, CIFAR10/100, 9-task VTAB 등 )
+
+## 학습조건
+- Optimizer : ADAM
+- 스케줄링 : linear learning rate decay
+- weight decay: 0.1
+- 배치 사이즈 : 4096
+- Label smoothing 사용
+- validation accuracy 기준 early-stopping

@@ -45,11 +45,11 @@ attention 개념 자체가 전체를 보고 어디가 어떤지를 말하는 모
 
 - large 데이터셋으로 사전학습 후 더 작은 데이터셋에 대해 fine-tune 하는 방식
 
-( 이미지 resize 및 MLP 헤드 부분을 클래스 수에 맞게 교체 )
+  ( 이미지 resize 및 MLP 헤드 부분을 클래스 수에 맞게 교체 )
 
 - 학습을 위해 large 데이터셋인 ImageNet, ImageNet-21k, JFT사용
 - 전처리는 Resize, RandomCrop, RandomHorizontalFilp 사용
 - 광범위하게 Dropout 적용 ( qkv-prediction 부분 제외 )
 - 아래 데이터셋에 대해 전이학습 진행 
 
-( ImageNet, CIFAR10/100, 9-task VTAB 등 )
+  ( ImageNet, CIFAR10/100, 9-task VTAB 등 )

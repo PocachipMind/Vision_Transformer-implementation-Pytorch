@@ -38,3 +38,18 @@ attention 개념 자체가 전체를 보고 어디가 어떤지를 말하는 모
 
 
 실제 논문에서는 라지스케일인 이미지넷 21K나 JFT 300M으로 사전학습을 했구요. 그 다음 CIFAR같은 다양한 데이터로 전이학습을 했는데 최신 모델의 정확도를 능가하거나 근접한 정확도를 달성했습니다.
+
+
+
+# ViT 학습
+
+- large 데이터셋으로 사전학습 후 더 작은 데이터셋에 대해 fine-tune 하는 방식
+
+( 이미지 resize 및 MLP 헤드 부분을 클래스 수에 맞게 교체 )
+
+- 학습을 위해 large 데이터셋인 ImageNet, ImageNet-21k, JFT사용
+- 전처리는 Resize, RandomCrop, RandomHorizontalFilp 사용
+- 광범위하게 Dropout 적용 ( qkv-prediction 부분 제외 )
+- 아래 데이터셋에 대해 전이학습 진행 
+
+( ImageNet, CIFAR10/100, 9-task VTAB 등 )
